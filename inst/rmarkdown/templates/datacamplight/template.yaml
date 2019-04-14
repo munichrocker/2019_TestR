@@ -1,0 +1,4 @@
+name: DatacampLight
+description: >
+   Provides a Rmd-Template to create automated Tests with Datacamp Light.
+create_dir: FALSE

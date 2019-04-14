@@ -1,0 +1,9 @@
+Package: TestR
+Title: Provides a Rmd-Template to create automated Tests with Datacamp Light
+Version: 0.0.0.9000
+Authors@R: person("Benedict", "Witzenberger", email = "b.witzenberger@gmail.com", role = c("aut", "cre"))
+Description: The package provides a Rmd_Template in which one can create Tests that use Datacamp Light to run in a HTML-file in the Browser. The tests can be generated in markdown and are then converted to HTML. So creating tests is a lot easier than to write them in a HTML directly.
+Depends: R (>= 3.5.1)
+License: MIT
+Encoding: UTF-8
+LazyData: true

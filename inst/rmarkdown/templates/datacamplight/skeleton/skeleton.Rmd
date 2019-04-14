@@ -1,0 +1,66 @@
+---
+title: "Vorlage Test"
+output:
+  html_document:
+    self_contained: false
+---
+
+```{r, include=FALSE}
+tutorial::go_interactive()
+```
+
+Das ist eine Vorlage, um automatisierte Tests mit [Datacamp Light]() zu erstellen.
+
+Die folgenden Tutorials helfen:
+
+[Datacamp Light auf Github](https://github.com/datacamp/datacamp-light)
+
+[Tutorial-Package]() für die Umwandlung des Rmd in ein HTML
+
+[Hilfe zu den Tests](https://datacamp.github.io/testwhat/articles/test-to-check.html)
+Anmerkung: aktuell scheinen beim Umwandeln nur die test_*-Funktionen zu funktionieren
+
+# Vorlage
+
+## Übung Überschrift
+
+```{r ex="UEBUNG_NAME", type="pre-exercise-code"}
+#Hier wird der Code eingegeben, der für die Übung definiert sein muss.
+```
+
+
+```{r ex="UEBUNG_NAME", type="sample-code"}
+#Hier ist die Übung definiert.
+```
+
+
+```{r ex="UEBUNG_NAME", type="solution"}
+#Hier wird der Lösungscode platziert.
+```
+
+```{r ex="UEBUNG_NAME", type="sct"}
+# Hier beginnen die Tests. Es gibt verschiedene Varianten:
+
+test_student_typed(c("TRUE & FALSE", "FALSE & TRUE")) #OR:
+test_student_typed("[H|h]ello,*\\s*[W|w]orld\\!*", fixed = FALSE)
+
+test_function("mean", args = c("x")) # OR (is na.rm does not matter):
+test_function("mean", args = c("x", "na.rm"), eval = c(TRUE, NA))
+
+test_function_result("mean")
+
+test_correct(test_object("x"), test_function("mean", args = c("x"))) # for x <- mean(1:3), does not check calculation
+
+test_object(OBJECT_NAME,
+            undefined_msg = "Please make sure to define a variable `b`.",
+            incorrect_msg = "Make sure that you assign the correct value to `b`.")
+
+test_output_contains(VALUE, incorrect_msg = "Hast Du dich verechnet? Oder d nicht ausgegeben?")
+
+success_msg("Super, Du hast alle Aufgaben in diesem Block erfolgreich gelöst!")
+```
+
+```{r ex = "UEBUNG_NAME", type = "hint"}
+"Hier kannst Du Hilfetext eingeben. Auch Code funktioniert mit ``"
+```
+
